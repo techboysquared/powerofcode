@@ -3,10 +3,10 @@
 
   angular
     .module('codingclient')
-    .controller('MainController', MainController);
+    .controller('LessonController', LessonController);
 
   /** @ngInject */
-  function MainController() {
+  function LessonController() {
       
   }
 })();
