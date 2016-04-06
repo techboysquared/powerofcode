@@ -1,9 +1,11 @@
 
-<div class="large-3 columns">
+<div class="large-6 columns">
 	This will hold the information for the lesson.
 </div>
-<div class="large-9 columns">
-	<div style="height: 50px; background: black; width: 100%;">
-		
-	</div>
+<div class="large-6 columns">
+	<div style="height: 100vh; width: 100%;" ui-ace="{
+												      theme:'twilight',
+												      mode: 'javascript',
+												      onLoad: lesson.editorLoaded
+												    }"></div>
 </div>
