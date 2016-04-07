@@ -39,9 +39,11 @@
 </div>
 <div class="console-window">
 	<div class="header">Console Output</div>
-	<ul>
-		<li ng-repeat="message in lesson.consoleMessages track by $index"> <span class="green-text"> >> </span> {{ message }}</li>
-	</ul>
+	<div class="output">
+		<ul >
+			<li ng-repeat="message in lesson.consoleMessages track by $index"> <span class="green-text"> >> </span> {{ message }}</li>
+		</ul>
+	</div>
 </div>
 
 <div class="tutorial-view">
