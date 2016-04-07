@@ -3,7 +3,7 @@
 	This will hold the information for the lesson.
 	
 	<marked>
-  # Markdown directive
+  ### Markdown directive
   *It works!*
   ** Bold **
   ```
@@ -13,13 +13,17 @@
 
 </div>
 <div class="large-8 columns">
-	<div style="height: calc(100vh - 56px - 50px); width: 100%;" ui-ace="{
-												      theme:'twilight',
-												      mode: 'javascript',
-												      onLoad: lesson.editorLoaded
-												    }"></div>
+	<div class="text-editor" style="height: calc(100vh - 56px - 50px); 
+	width: 100%;" ui-ace="{ theme:'twilight',
+				   mode: 'javascript',
+	               onLoad: lesson.editorLoaded }"></div>
+
 	<div class="large-12 columns" style="padding-left: 43px; height: 50px; width: 100%; background-color: #232323;">
 		<button ng-click="lesson.runCode()" class="button" style="margin-top: 5px;">Run Code</button>
 	</div>
 </div>
-
+<div style="position: fixed; width: 400px; height: 300px; background-color: white; opacity: .65; right: 25px; top: 65px;">
+	<ul style="list-style-type: none;">
+		<li ng-repeat="message in lesson.consoleMessages track by $index"> {{ message }}</li>
+	</ul>
+</div>

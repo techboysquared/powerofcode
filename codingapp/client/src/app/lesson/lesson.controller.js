@@ -17,9 +17,11 @@
   		editor.setValue("function test() \n{ \n \t alert('Hello') \n}\n");
   		vm.editor.clearSelection();
   		vm.editor.setFontSize(16);
+  		vm.consoleMessages = [];
   	}
   	vm.runCode = function()
   	{
+  		vm.consoleMessages = [];
   		var oldLog = console.log;
   		console.log = consoleWindow;
   		eval(vm.editor.getValue());
@@ -32,7 +34,7 @@
   	}
   	function consoleWindow(message)
   	{
-  		alert(message);
+  		vm.consoleMessages.push(message);
   	}
 
   	function badgeEarned(message)
