@@ -1,6 +1,4 @@
 (function() {
-  'use strict';
-
   angular
     .module('codingclient')
     .controller('LessonController', LessonController);
@@ -18,6 +16,9 @@
   		vm.editor.clearSelection();
   		vm.editor.setFontSize(16);
   		vm.consoleMessages = [];
+      vm.name = "Variables";
+      vm.currentNumber = 1;
+      vm.totalNumber = 6;
   	}
   	vm.runCode = function()
   	{
@@ -27,6 +28,7 @@
       try
       {
   		  eval(vm.editor.getValue());
+
   		}
       catch(err)
       {
@@ -51,6 +53,7 @@
           console.log = oldLog;
           console.log(err.name);
         }
+
 
       }
       console.log = oldLog;
