@@ -24,17 +24,51 @@
   		vm.consoleMessages = [];
   		var oldLog = console.log;
   		console.log = consoleWindow;
-  		eval(vm.editor.getValue());
-  		console.log = oldLog;
+      try
+      {
+  		  eval(vm.editor.getValue());
+  		}
+      catch(err)
+      {
+        toastr.error("Your code is not valid. Please review it and try again.");
+        if(err.name == 'ReferenceError')
+        {
+          var context = { type: 1, link: "www.youtube.com"};
+          consoleWindow("Error: " + err.message, context);
+        }
+        else if(err.name == 'SyntaxError')
+        {
+          var context = { type: 1, link: "www.youtube.com"};
+          consoleWindow("Error: " + err.message, context);
+        }
+        else if(err.name == 'TypeError')
+        {
+          var context = { type: 1, link: "www.youtube.com"};
+          consoleWindow("Error: " + err.message, context);
+        }
+        else
+        {
+          console.log = oldLog;
+          console.log(err.name);
+        }
+
+      }
+      console.log = oldLog;
+      
   	}
   	function editorChanged(e)
   	{
   		var annotations = vm.editor.getSession().getAnnotations().length;
   		vm.codeValid = annotations == 0;
   	}
-  	function consoleWindow(message)
+  	function consoleWindow(message, context)
   	{
-  		vm.consoleMessages.push(message);
+      if (context == undefined) 
+      {
+        context = { type: 0 };
+      }
+      var line = { message: message, context: context };
+  		vm.consoleMessages.push(line);
   	}
 
   	function badgeEarned(message)
@@ -44,11 +78,11 @@
 
   	function textCopied()
   	{
-  		badgeEarned("Text Copied... Will Let User Earn 'Copy Cat Badge'");
+  		badgeEarned("Badge Earned: 'Copy Cat'");
   	}
   	function textPasted()
   	{
-  		badgeEarned("Text Pasted. Should earn another badge. ");
+  		badgeEarned("Badge Earned: 'Lazy is okay.'");
   	}
   }
 })();

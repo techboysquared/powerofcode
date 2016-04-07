@@ -1,4 +1,8 @@
 
+@editor-bg: #232323;
+@console-success-bg: #C1E1A6;
+@console-failure-bg: #F36A6A;
+
 .text-editor{
 	height: calc(~"100vh" - 106px); // This is a hack to make it work. 
 	width: 100%;	
@@ -12,7 +16,7 @@
 	padding-left: 43px; 
 	height: 52px; 
 	width: 100%; 
-	background-color: #232323;
+	background-color: @editor-bg;
 }
 #run-code-button{
 	margin-top: 5px;
@@ -20,49 +24,70 @@
 }
 
 .console-window{
-	position: fixed; 
-	
+	width: 100%;
 	background-color: white; 
-	right: 25px; 
-	border-radius: 5px;
-	top: 65px;
+	
+	height: calc(~"100vh" - 106px); ;
+	
 	ul{
 		list-style-type: none;
-		margin-top: 25px;
+		
 		padding-left: 0px;
-		.green-text{
-			color: green;
-		}
+
+		
+		width: 100%;
 	}
-	li{
-		margin-left: -15px;
-	}
+	
 	.header{
 		padding-left: 10px; 
 		padding-top: 3px;
 		color: #979797;
-
 		background-color: #F1F1F1;
-		position: fixed;
-		width: 400px;
+		width: 100%;
 		height: 35px;
-		border-top-right-radius: 5px;
-		border-top-left-radius: 5px;
 
 	}
+
 	.output{
-		width: 400px; 
-		height: 300px; 
-		padding-top: 8px;
+		
+		ul li{
+			width: 100%;
+			padding-left: 10px;
+			margin-left: -20px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-top: 1px solid #C7C5C5;
+		}
+		li:last-child{
+			border-bottom: 1px solid #C7C5C5;
+		}
+		.success {
+			background-color: @console-success-bg;
+			span {
+				color: green;
+			}
+		}
+		.failure {
+			background-color: @console-failure-bg;
+			span {
+				color: red;
+			}
+		}
+		
 	}
-	z-index: 100;
+
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 body{
 	overflow-y: hidden;
 }
 div.editor{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+div.right-panel{
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 }

@@ -28,7 +28,7 @@
   	
 
 </div>
-<div class="large-9 columns editor">
+<div class="large-6 columns editor">
 	<div class="text-editor" ui-ace="{ theme:'twilight',
 				   mode: 'javascript',
 	               onLoad: lesson.editorLoaded }"></div>
@@ -37,12 +37,19 @@
 		<button ng-click="lesson.runCode()" class="button" id="run-code-button">Run Code</button>
 	</div>
 </div>
-<div class="console-window">
-	<div class="header">Console Output</div>
-	<div class="output">
-		<ul >
-			<li ng-repeat="message in lesson.consoleMessages track by $index"> <span class="green-text"> >> </span> {{ message }}</li>
-		</ul>
+<div class="large-3 columns right-panel">
+	<div class="console-window">
+		<div class="header">Console Output</div>
+		<div class="output">
+			<ul >
+				<li ng-repeat="line in lesson.consoleMessages track by $index" ng-class="line.context.type == 0 ? 'success' : 'failure'"> 
+					<span class="green-text"> >> </span> {{ line.message }} 
+
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="bottom-editor-bar">
 	</div>
 </div>
 
