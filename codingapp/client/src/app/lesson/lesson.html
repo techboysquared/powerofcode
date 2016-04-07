@@ -1,16 +1,25 @@
 
-<div class="large-6 columns">
+<div class="large-4 columns">
 	This will hold the information for the lesson.
+	
 	<marked>
   # Markdown directive
   *It works!*
   ** Bold **
+  ```
+  var x = 8;
+  ```
 </marked>
+
 </div>
-<div class="large-6 columns">
-	<div style="height: 100vh; width: 100%;" ui-ace="{
+<div class="large-8 columns">
+	<div style="height: calc(100vh - 56px - 50px); width: 100%;" ui-ace="{
 												      theme:'twilight',
 												      mode: 'javascript',
 												      onLoad: lesson.editorLoaded
 												    }"></div>
+	<div class="large-12 columns" style="padding-left: 43px; height: 50px; width: 100%; background-color: #232323;">
+		<button ng-click="lesson.runCode()" class="button" style="margin-top: 5px;">Run Code</button>
+	</div>
 </div>
+
