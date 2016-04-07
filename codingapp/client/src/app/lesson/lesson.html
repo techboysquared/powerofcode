@@ -1,0 +1,50 @@
+
+<div class="large-3 columns lesson-content">
+
+	Using Variables
+	
+		<marked>
+		  ##### Introduction
+		  A **variable** is something we use to represent a value that changes.  
+
+		  Lets look at an example:  
+		  ```javascript
+		  var x = 8;
+	  	  ```  
+
+	  	  In the above example, we **declare** a variable **x** and **assign** it a value of **8**.  
+	  	  When working with variables you must declare them and also define them.  
+	  	  Declaring a variable is just saying that it exists.  
+	  	  For example, this code demonstrates declaring a variable:  
+	  	  ```javascript
+	  	  var y;
+	  	  ```
+	  	  In this example, we declare a variable y; however, we do not give the variable a value. That is the variable is not defined. The variable has no way to know what it is.  
+	  	  Since we have already declared the variable we can define it seperately. The following code will perform that operation. 
+	  	  ```javascript
+	  	  y = 8;
+	  	  ```
+	  	</marked>
+  	
+
+</div>
+<div class="large-9 columns editor">
+	<div class="text-editor" ui-ace="{ theme:'twilight',
+				   mode: 'javascript',
+	               onLoad: lesson.editorLoaded }"></div>
+
+	<div class="large-12 columns bottom-editor-bar">
+		<button ng-click="lesson.runCode()" class="button" id="run-code-button">Run Code</button>
+	</div>
+</div>
+<div class="console-window">
+	<div class="header">Console Output</div>
+	<div class="output">
+		<ul >
+			<li ng-repeat="message in lesson.consoleMessages track by $index"> <span class="green-text"> >> </span> {{ message }}</li>
+		</ul>
+	</div>
+</div>
+
+<div class="tutorial-view">
+</div>
