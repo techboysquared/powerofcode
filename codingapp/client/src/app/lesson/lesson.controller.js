@@ -4,8 +4,9 @@
     .controller('LessonController', LessonController);
 
   /** @ngInject */
-  function LessonController(toastr) {
+  function LessonController(toastr, Auth) {
   	var vm = this;
+    
   	vm.editorLoaded = function(editor)
   	{
   		vm.editor = editor;
@@ -16,6 +17,9 @@
   		vm.editor.clearSelection();
   		vm.editor.setFontSize(16);
   		vm.consoleMessages = [];
+      vm.Auth = Auth;
+      console.log(Auth);
+      console.log(Auth.username);
       vm.name = "Variables";
       vm.currentNumber = 1;
       vm.totalNumber = 6;

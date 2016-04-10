@@ -1,0 +1,22 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Code Along</li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+
+    <ul class="dropdown menu" data-dropdown-menu ng-show="Auth.loggedIn()" >
+      <div style="width: 32px; height: 32px; border-radius: 16px; background-color: red;" ng-click="toggleUserMenu()">
+      </div>
+    </ul>
+    <ul class="dropdown menu" data-dropdown-menu ng-show="!Auth.loggedIn()" >
+      <li class="menu-text">sign up / login</li> 
+    </ul>
+  </div>
+  <div style="width: 280px; height: 250px; background-color: white; position: fixed; top: 50px; right: 10px;" ng-show="userDialogOpen">
+    {{ Auth.name }}
+
+    <a ng-click="logout()">Logout</a>
+  </div>
+</div>
