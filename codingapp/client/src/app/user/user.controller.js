@@ -11,5 +11,11 @@
   		vm.username = "@techboysquared";
   		vm.location = "New York, NY";
   		vm.joindate = "March 3rd, 2015"
+      vm.register = function(){
+        alert("here");
+      }
+      vm.login = function(){
+        alert("login");
+      }
   }
 })();

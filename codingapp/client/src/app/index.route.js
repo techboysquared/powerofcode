@@ -25,6 +25,18 @@
         templateUrl: 'app/lesson/lesson.html',
         controller: 'LessonController',
         controllerAs: 'lesson'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'app/user/login.html',
+        controller: 'UserController',
+        controllerAs: 'user'
+      })
+      .state('signup', {
+        url: '/signup',
+        templateUrl: 'app/user/signup.html',
+        controller: 'UserController',
+        controllerAs: 'user'
       });
 
     $urlRouterProvider.otherwise('/');

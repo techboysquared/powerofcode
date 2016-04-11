@@ -1,0 +1,19 @@
+<form ng-submit="user.register()">
+  <div class="row" >
+    <div class="large-6 large-centered  columns" ng>
+      <label>Name
+        <input type="text" placeholder="Please enter name" ng-model="user.name">
+      </label>
+      <label>Email
+        <input type="email" placeholder="Please enter email" ng-model="user.email">
+      </label>
+      <label>Password
+        <input type="password" placeholder="Please enter password" ng-model="user.password">
+      </label>
+      <label>Confirm Password
+        <input type="password" placeholder="Don't get it wrong" ng-model="user.confirmPassword">
+      </label>
+      <input type="submit" class="button success" value="Signup"  />
+    </div>
+  </div>
+</form>

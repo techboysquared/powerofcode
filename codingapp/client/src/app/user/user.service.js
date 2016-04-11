@@ -6,9 +6,9 @@
     .service('Auth', function() {
         this.username = "techboysquared";
         this.name = "Cody Short"
-        var id = null;
+        var id = "xdjafobi";
         this.loggedIn = function(){
-          return this.username == null ? false : true;
+          return this.id == null ? false : true;
         }
         this.login = function(username, id)
         {
